@@ -1,0 +1,30 @@
+@buttonGradient: linear-gradient(
+        darken(#8e8e8e, 20%) 1px,
+        darken(#79787e, 20%) 1px,
+        darken(#636265, 20%) 99%,
+        darken(#6e6e6e, 20%) 1%);
+
+@buttonGradientPressed: linear-gradient(
+        darken(#8e8e8e, 25%) 1px,
+        darken(#79787e, 25%) 1px,
+        darken(#636265, 25%) 99%,
+        darken(#6e6e6e, 25%) 1%);
+
+body {
+    --buttonGradient: @buttonGradient;
+    --buttonGradient-Pressed: @buttonGradientPressed;
+}
+
+
+.app-chrome {
+    background: mix(#1a1a1c, transparent, 70%) !important;
+}
+
+#app-sidebar {
+    border-right: 1px solid rgb(200 200 200 / 15%);
+    background  : mix(#46424a, transparent, 30%);
+}
+
+.playback-controls {
+    background-color: #3c3c3e !important;
+}

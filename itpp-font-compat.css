@@ -1,0 +1,4 @@
+body {
+    --fontStyle: 'SFProText', 'Inter var experimental' !important;
+    font-family: var(--fontStyle)!important;
+}

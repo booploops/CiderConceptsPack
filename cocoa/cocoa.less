@@ -1,0 +1,357 @@
+@keyColor: #fc3c44;
+
+
+body {
+    --keyColor: #fc3c44;
+}
+
+.md-btn {
+    &:active {
+        background-color: var(--keyColor);
+        transform       : unset;
+        filter          : unset;
+        border          : 1px solid mix(@keyColor, rgb(200 200 200), 80%);
+        border-top      : 1px solid mix(@keyColor, rgb(200 200 200), 70%);
+        color           : #eee;
+    }
+}
+#app:not(.twopanel) {
+
+    h1,h2,h3,h4,h5,h6 {
+        font-weight: 600!important;
+    }
+
+    @chromeHeight : 55px;
+    --chromeHeight: 0px;
+    @chromeOffset : 234px;
+    @sidebarSize  : 220px;
+
+    .app-mainmenu {
+        background: unset;
+        opacity: 0.5;
+        &:after {
+            font     : normal normal normal 16px/1 codicon;
+            font-size: 16px;
+            content  : "";
+            color    : white;
+        }
+
+        &:hover {
+            transform : unset;
+            background: var(--hover) !important;
+        }
+    }
+
+
+
+    .app-chrome {
+        position        : fixed;
+        padding-left    : @chromeOffset;
+        left            : unset;
+        top             : 0;
+        right           : 0;
+        z-index         : 0;
+        background-color: transparent;
+        z-index         : 2 !important;
+
+        // 1a1a1c
+
+        &:before {
+            content           : "";
+            height            : @chromeHeight;
+            width             : calc(100% - @sidebarSize);
+            position          : absolute;
+            top               : 0;
+            right             : 0;
+            background-color  : mix(#1a1a1c, transparent, 70%);
+            border-bottom     : 1px solid rgb(200 200 200 / 15%);
+            -webkit-app-region: drag;
+            z-index           : -1;
+            // backdrop-filter: blur(16px) saturate(180%);
+        }
+    }
+
+    .app-chrome--left {
+        >div:first-child {
+            position: fixed;
+            top     : 0;
+            left    : 0;
+            height  : @chromeHeight;
+        }
+    }
+
+    .app-chrome--right {
+        width: 40%;
+    }
+
+    input.search-input {
+        background-color: mix(#534f57, transparent, 20%);
+        font-weight     : 300;
+    }
+
+    .app-chrome-item {
+        button:not(.active) {
+            background-color: transparent;
+        }
+
+        button:active {
+            transform: unset;
+            filter   : brightness(80%);
+        }
+
+        .playback-button--small {
+            background-size: 40%;
+
+            &.repeat {
+                background-size: 80%;
+            }
+
+            .lyrics {
+                background-size: 80%;
+            }
+        }
+    }
+
+    .playback-controls {
+        background   : #3c3c3e;
+        border-radius: 3px;
+        border       : 1px solid rgb(50 50 50 / 50%);
+        padding-right: 12px;
+        height       : 46px;
+        padding      : 0px;
+
+        .artwork {
+            margin: 0;
+            height: 46px;
+            width : 46px;
+
+            .mediaitem-artwork {
+                border-radius: 0px;
+            }
+        }
+    }
+
+    .window-controls {
+        height       : 32px;
+        width        : 100px;
+        // align-self: baseline;
+        padding-right: 6px;
+
+        >div {
+            border-radius: 100%;
+            transition   : background .2s ease;
+        }
+    }
+
+    #app-sidebar {
+        width       : @sidebarSize;
+        padding-top : @chromeHeight;
+        border-right: 1px solid rgb(200 200 200 / 15%);
+        background  : mix(#46424a, transparent, 30%);
+
+        .app-sidebar-header {
+            padding: 8px;
+        }
+
+        .sidebar-icon {
+            --size: 15px;
+            width : var(--size);
+            height: var(--size);
+
+            >svg {
+                height         : 100%;
+                width          : 100%;
+                background-size: 150%;
+            }
+        }
+
+        .app-sidebar-item {
+            font-size    : 13.2px;
+            font-weight  : 300;
+            align-items  : center;
+            border-radius: 6px;
+            padding      : 6px 12px;
+
+            &:hover {
+                background-color: transparent;
+            }
+
+            &.active {
+                &:hover {
+                    background-color: rgba(200, 200, 200, 0.15);
+                }
+
+                &:active {
+                    background-color: rgba(200, 200, 200, 0.15);
+                }
+            }
+
+            &:active {
+                background-color: var(--selected-click);
+            }
+
+            &:after {
+                display: none;
+            }
+        }
+
+        .app-sidebar-header-text {
+            &:hover {
+                background-color: transparent;
+            }
+
+            &.active {
+                &:hover {
+                    background-color: rgba(200, 200, 200, 0.15);
+                }
+            }
+
+            &:after {
+                display: none;
+            }
+        }
+
+
+
+        // &:before {
+        //     content: "";
+        //     height: @chromeHeight;
+        //     width:100%;
+        //     position:absolute;
+        //     top:0;left: 0;
+        //     background-color: red;
+        //     -webkit-app-region: drag;
+        //     z-index: 0;
+        // }
+    }
+
+    .cd-mediaitem-square:not(.mediaitem-card) {
+        width: 211px;
+
+        .title {
+            justify-content: flex-start;
+        }
+
+        .subtitle {
+            text-align: left;
+        }
+    }
+
+    #app-content {
+        height       : calc(100% - 55px);
+        border-radius: 0px;
+        border       : 0px;
+        margin-top   : 55px;
+    }
+
+    .app-playback-controls {
+        overflow     : hidden;
+        border-radius: 3px;
+        padding-right: 6px;
+
+        .song-progress {
+            bottom: -6px;
+
+            input {
+                border-radius: 0px;
+            }
+        }
+
+        .actions {
+            display: none;
+        }
+    }
+
+    .app-drawer {
+        top: 55px;
+        height: calc(100% - 55px);
+        right:0;
+        border-radius: 0px;
+        box-shadow: unset;
+        border-left: 1px solid rgb(200 200 200 / 15%);
+    }
+
+}
+
+.drawertransition-enter-active,
+.drawertransition-leave-active {
+    transition: margin .25s var(--appleEase), opacity .25s var(--appleEase);
+}
+
+.drawertransition-enter,
+.drawertransition-leave-to {
+    margin-right: -300px;
+}
+
+.menu-panel {
+    --panelShadow: var(--mediaItemShadow), 0px 0px 0px 1px rgb(30 30 30), 0 8px 40px rgb(0 0 0 / 0.55);
+
+    .menu-header-body {
+        background-color: transparent;
+    }
+
+    .menu-panel-body {
+        padding   : 2px;
+        background: #1a1a1cac;
+        box-shadow: var(--panelShadow);
+
+        .menu-option {
+            align-items: center;
+            font-size  : 14px;
+            padding    : 10px 12px;
+
+            // font-weight: 300;
+            .sidebar-icon {
+                --size: 15px;
+                width : var(--size);
+                height: var(--size);
+            }
+
+            &:before {
+                background : var(--keyColor);
+                transition : 0s;
+                align-items: center;
+            }
+        }
+    }
+}
+
+
+
+.wpfade_transform-enter-active,
+.wpfade_transform-leave-active {
+    --transitionTime: 0.2s;
+    transition      : opacity var(--transitionTime) var(--appleEase);
+    will-change     : opacity, transform;
+}
+
+.wpfade_transform-enter {
+    opacity    : 0;
+    transform  : unset;
+    will-change: opacity;
+}
+
+.wpfade_transform-leave-to {
+    opacity    : 0;
+    transform  : unset;
+    will-change: opacity;
+}
+
+
+.wpfade_transform_backwards-enter-active,
+.wpfade_transform_backwards-leave-active {
+    --transitionTime: 0.2s;
+    transition      : opacity var(--transitionTime) var(--appleEase);
+}
+
+.wpfade_transform_backwards-enter {
+    opacity    : 0;
+    transform  : unset;
+    will-change: opacity;
+}
+
+.wpfade_transform_backwards-leave-to {
+    opacity    : 0;
+    transform  : unset;
+    will-change: opacity;
+}

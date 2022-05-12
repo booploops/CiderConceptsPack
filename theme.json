@@ -1,0 +1,44 @@
+{
+    "name": "Concepts Pack",
+    "description": "booploops Cider Concepts Pack",
+    "version": "1.0.0",
+    "author": "booploops",
+    "github_repo": "booploops/CiderConceptsPack",
+    "directives": {
+        "windowLayout": {
+            "value": "normal"
+        }
+    },
+    "pack": [
+        {
+            "name": "Cocoa",
+            "description": "",
+            "file": "cocoa/cocoa.less"
+        },
+        {
+            "name": "CiTunes",
+            "description": "",
+            "file": "citunes.less"
+        },
+        {
+            "name": "CiTunes Big Sur Colors",
+            "description": "",
+            "file": "big-sur-colors.less"
+        },
+        {
+            "name": "Manrope Font",
+            "description": "Helvetica Lookalike",
+            "file": "manrope-font.less"
+        },
+        {
+            "name": "iTheme++ Compatibility (Fonts)",
+            "description": "iTheme++ Compatility (Fonts)",
+            "file": "itpp-font-compat.css"
+        },
+        {
+            "name": "iTheme++ Compatibility (Icons)",
+            "description": "iTheme++ Compatility (Icons)",
+            "file": "itpp-icons-compat.less"
+        }
+    ]
+}

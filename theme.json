@@ -39,6 +39,11 @@
             "name": "iTheme++ Compatibility (Icons)",
             "description": "iTheme++ Compatility (Icons)",
             "file": "itpp-icons-compat.less"
+        },
+        {
+            "name": "Bigger Sidebar Text",
+            "description": "",
+            "file": "bigger-font-size.less"
         }
     ]
 }

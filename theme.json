@@ -11,6 +11,11 @@
     },
     "pack": [
         {
+            "name": "Cider Redesign #1",
+            "description": "",
+            "file": "redesign1.less"
+        },
+        {
             "name": "Cocoa",
             "description": "",
             "file": "cocoa/cocoa.less"

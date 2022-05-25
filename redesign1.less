@@ -1,0 +1,194 @@
+@keyColor  : #fc3c44;
+@ciderColor: #ff2654;
+
+#app {
+    --keyColor         : @keyColor;
+    --songProgressColor: var(--keyColor);
+    background         : red;
+}
+
+@appOpacity: 0.15;
+
+.app-navigation {
+    background     : transparent;
+    align-items    : center;
+    justify-content: center;
+    width          : 100%;
+    margin         : 0 auto;
+}
+
+.app-chrome {
+    @baseColor: rgb(100 100 100);
+    @mxColor: mix(@ciderColor, @baseColor, 10%);
+    background: mix(@mxColor, transparent, 15%)!important;
+    box-shadow: 0px 3px 6px rgb(20 20 20 / 12%);
+
+}
+
+#app {
+    &::before {
+        display: none;
+    }
+}
+
+.app-sidebar-header {
+    padding: 12px 3px;
+}
+
+.search-input {
+    font-family  : inherit;
+    background   : rgba(100, 100, 100, 0.25);
+    border-radius: 6px;
+    font-size    : 14px;
+    border       : 1px solid rgba(100, 100, 100, 0.35);
+    border-top   : 1px solid rgba(100, 100, 100, 0.5);
+    color        : #eee;
+    filter       : unset;
+    border-bottom: 1px solid rgb(60 60 60 / 12%);
+    white-space  : nowrap;
+    transition   : transform 0.2s var(--appleEase), box-shadow 0.2s var(--appleEase);
+    opacity      : 1;
+}
+
+#app-main {
+    background-color: rgba(20 20 20 / .7);
+}
+
+#app-sidebar {
+    background    : transparent;
+    max-width     : 260px;
+    padding-top   : 6px;
+    padding-bottom: 12px;
+    padding-left  : 6px;
+    padding-right : 6px;
+
+    .app-sidebar-content {
+        padding-top       : 16px;
+        padding-bottom    : 32px;
+        -webkit-mask-image: linear-gradient(to top, transparent 10px, #000 32px);
+        // background: rgba(100, 100, 100, 0.15);
+        border-radius     : 10px;
+        // box-shadow: inset 0px 0px 0px 1px rgb(200 200 200 / 6%), inset 0px 2px 10px 10px rgb(200 200 200 / 2%);
+    }
+
+    margin: 6px;
+}
+
+.artist-page .artist-header {
+    border-radius: 10px;
+    border       : 0px;
+    overflow     : hidden;
+    // box-shadow: var(--mediaItemShadow);
+    position     : relative;
+    margin       : 6px;
+    box-shadow   : 0px 4px 6px 3px rgb(0 0 0 / 10%);
+
+    &:after {
+        content       : "";
+        position      : absolute;
+        top           : 0;
+        left          : 0;
+        right         : 0;
+        bottom        : 0;
+        // box-shadow: inset 0px 0px 0px 1px rgb(0 0 0 / 25%);
+        box-shadow    : inset 0px 0px 0px 1px rgb(200 200 200 / 6%), inset 0px 2px 10px 10px rgb(200 200 200 / 2%);
+        z-index       : 2;
+        border-radius : 10px;
+        pointer-events: none;
+    }
+}
+
+.playlist-page .playlist-display {
+    border-radius: 10px;
+    box-shadow   : 0px 4px 6px 3px rgb(0 0 0 / 10%);
+    border       : 0px;
+    overflow     : hidden;
+    // box-shadow: var(--mediaItemShadow);
+    position     : relative;
+    margin       : 6px;
+
+    &:after {
+        content       : "";
+        position      : absolute;
+        top           : 0;
+        left          : 0;
+        right         : 0;
+        bottom        : 0;
+        // box-shadow: inset 0px 0px 0px 1px rgb(0 0 0 / 25%);
+        box-shadow    : inset 0px 0px 0px 1px rgb(200 200 200 / 6%), inset 0px 2px 10px 10px rgb(200 200 200 / 2%);
+        z-index       : 2;
+        border-radius : 10px;
+        pointer-events: none;
+    }
+}
+
+.playlist-page .playlist-body {
+    background-color: transparent;
+}
+
+#app-content {
+    background-color: transparent;
+    border-radius   : 0px;
+    border          : 0px;
+    align-self      : center;
+    justify-self    : center;
+    margin          : 12px;
+    width           : 100%;
+    // height: calc(100% - 12px);
+    border-radius   : 0px;
+    // filter: drop-shadow(20px 20px 20px rgba(0, 0, 0, 0.5));
+}
+
+.app-chrome.chrome-bottom {
+    box-shadow: 0px -2px 6px rgb(20 20 20 / 12%) !important;
+}
+
+#app {
+    background: transparent;
+}
+
+.well {
+    box-shadow:unset!important;
+}
+.sidebar-icon {
+    --size: 15px;
+    width : var(--size);
+    height: var(--size);
+
+    >svg {
+        height         : 100%;
+        width          : 100%;
+        background-size: 150%;
+    }
+}
+.app-sidebar-item {
+    font-size  : 14px;
+    align-items: center;
+    padding    : 6px 16px;
+
+    &::after {
+        display: none !important;
+    }
+
+    &:hover {
+        background-color: transparent;
+    }
+
+    &.active {
+        &:hover {
+            background-color: rgba(200, 200, 200, 0.15);
+        }
+
+        &:active {
+            background-color: rgba(200, 200, 200, 0.15);
+        }
+    }
+
+    &:active {
+        background-color: var(--keyColor);
+    }
+
+    &:after {
+        display: none;
+    }
+}

@@ -177,11 +177,14 @@ body {
 
     .app-chrome {
         background   : @glassColor1;
-        z-index      : 1;
     }
 
     .app-chrome--right {
         width: 40%;
+    }
+
+    .app-chrome--center {
+        flex: unset;
     }
 
     // .search-input-container {
@@ -265,7 +268,7 @@ body {
             opacity         : 1;
             overflow        : hidden;
 
-            &:before {
+            &:after {
                 background: var(--buttonGradient);
                 content   : "";
                 display   : block;

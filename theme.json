@@ -11,11 +11,6 @@
     },
     "pack": [
         {
-            "name": "Cider Refresh #1",
-            "description": "",
-            "file": "redesign1.less"
-        },
-        {
             "name": "Cocoa",
             "description": "",
             "file": "cocoa/cocoa.less"

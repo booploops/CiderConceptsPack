@@ -1,0 +1,93 @@
+:root {
+    --glassFilter2: blur(32px) saturate(180%);
+}
+
+#app.twopanel {
+    .app-chrome.chrome-bottom {
+        --dist: 16px;
+        position: fixed;
+        bottom: var(--dist);
+        left: var(--dist);
+        right: var(--dist);
+        width: auto;
+        border-radius: 10px;
+        box-shadow: 0px 2px 6px 3px rgb(20 20 20 / 20%)
+        , 0px 0px 0px 1px rgb(200 200 200 / 22%)
+        , 0px 0px 0px 2px rgb(2 2 2 / 20%);
+        backdrop-filter: var(--glassFilter2);
+    }
+
+    .app-chrome.chrome-bottom .app-chrome-playback-duration-bottom input[type=range] {
+        height                  : 5px;
+        @shadowColor            : #3D2116;
+        --songProgressBackground: #A5A8BA;
+        box-shadow              : 0px 0px 0px 1px rgba(0 0 0 / 10%);
+    
+        &::-webkit-slider-thumb {
+            opacity           : 1;
+            transform         : scale(1);
+            -webkit-appearance: none;
+            appearance        : none;
+            width             : 20px;
+            height            : 20px;
+            border-radius     : 100%;
+            background        : #434444;
+            background-image  : radial-gradient(var(--keyColor) 4px, transparent 5px, transparent 10px);
+            cursor            : default;
+            transition        : opacity .10s var(--appleEase), transform .10s var(--appleEase);
+            box-shadow        : inset 0px 0px 0px 1px rgba(255, 255, 255, 0.4);
+    
+            &:hover {
+                opacity         : 1;
+                background-image: radial-gradient(var(--keyColor) 5px, transparent 6px, transparent 10px);
+            }
+        }
+    }
+
+    .app-navigation {
+        height: 100%;
+    }
+    
+    #app-sidebar {
+        background: var(--baseColorMix);
+    }
+    
+    #app-content {
+        border:0px;
+    }
+    
+    .app-sidebar-content {
+        height: calc(100% - 140px);
+        background-color: transparent;
+        margin: 16px 6px;
+        padding-bottom: 32px;
+        -webkit-mask-image: linear-gradient(to bottom, blue 95%, transparent 100%);
+    }
+    
+    .content-inner:not(.playlist-page) {
+        padding-bottom: 108px;
+    }
+    
+    .app-chrome:not(.chrome-bottom) {
+        // box-shadow: unset;
+        backdrop-filter: var(--glassFilter2);
+    }
+    
+    .app-drawer {
+        height: calc(calc(100% - 18%) - var(--chromeHeight1));
+        top: calc(var(--chromeHeight1) + 2%);
+    }
+    
+    .artist-page .artist-body {
+        padding-bottom: 80px!important;
+    }
+    
+    .playlist-page .playlist-body {
+        padding-bottom: 110px;
+    }
+    
+    .app-navigation {
+        background: transparent;
+    }
+}
+

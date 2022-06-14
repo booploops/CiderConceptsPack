@@ -11,6 +11,11 @@
     },
     "pack": [
         {
+            "name": "Floaty",
+            "description": "",
+            "file": "floaty.less"
+        },
+        {
             "name": "Cocoa",
             "description": "",
             "file": "cocoa/cocoa.less"

@@ -1,6 +1,6 @@
 # booploops Cider Concepts Pack
 
-Various miscellaneous concept themes made by me
+Various miscellaneous concept themes made by me, some may or may not make it into Cider one day.
 
 ## Featuring
 

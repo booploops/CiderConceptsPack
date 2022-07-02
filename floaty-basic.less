@@ -1,0 +1,58 @@
+:root {
+    --glassFilter2: blur(32px) saturate(180%);
+}
+
+#app.twopanel:not([window-state="fullscreen"]) {
+    .app-chrome.chrome-bottom {
+        --dist         : 16px;
+        position       : fixed;
+        bottom         : var(--dist);
+        left           : var(--dist);
+        right          : var(--dist);
+        width          : auto;
+        border-radius  : 10px;
+        box-shadow     : 0px 2px 6px 3px rgb(20 20 20 / 20%), 0px 0px 0px 1px rgb(200 200 200 / 22%), 0px 0px 0px 2px rgb(2 2 2 / 20%);
+        backdrop-filter: var(--glassFilterHeavy);
+        z-index: 8;
+    }
+
+    .app-navigation {
+        height: 100%;
+    }
+
+    #app-content {
+        border: 0px;
+    }
+
+    .app-sidebar-content {
+        height            : calc(100% - 120px);
+        background-color  : transparent;
+        -webkit-mask-image: linear-gradient(to bottom, blue 95%, transparent 100%);
+    }
+
+    .content-inner:not(.playlist-page) {
+        padding-bottom: 108px;
+    }
+
+    .app-drawer {
+        height: calc(calc(100% - 18%) - var(--chromeHeight1));
+        top   : calc(var(--chromeHeight1) + 2%);
+        
+        .lyric-footer {
+            padding-bottom: 35px;
+        }
+    }
+
+    .artist-page .artist-body {
+        padding-bottom: 80px !important;
+    }
+
+    .playlist-page .playlist-body {
+        padding-bottom: 110px;
+    }
+
+    .modular-fs .app-drawer {
+        height: calc(calc(100% - 0%) - var(--chromeHeight1)) !important;
+        top   : calc(var(--chromeHeight1) + 0%) !important;
+    }
+}

@@ -1,7 +1,7 @@
 {
     "name": "Concepts Pack",
     "description": "booploops Cider Concepts Pack",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "author": "booploops",
     "github_repo": "booploops/CiderConceptsPack",
     "directives": {
@@ -14,6 +14,11 @@
             "name": "Floaty",
             "description": "",
             "file": "floaty.less"
+        },
+        {
+            "name": "Floaty Simple",
+            "description": "",
+            "file": "floaty-basic.less"
         },
         {
             "name": "Cocoa",
